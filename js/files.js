@@ -20,11 +20,11 @@ const CATEGORIES = [
 
 const FILES = [
   {
-    name: "MovieBox_4.0.03.0930.03_(50020132_premium.apk",
+    name: "MovieBox_4.0.03.0930.03_(50020132)_premium.apk",
     category: "software",
     sizeMB: 80,
     date: "2026-10-06",
-    desc: "MovieBoxoffers a wide library of movies and TV shows to suit different tastes.",
+    desc: "MovieBox offers a wide library of movies and TV shows to suit different tastes.",
     direct: "https://mega.nz/file/l6YgCaAB#3gNpL2c5daqoooDDKqpMfqZiCjBXGbPmlz3TBU29I4Q",
     mirror: "https://leeapk.com/0012-moviebox-mod-apk/",
   },
@@ -39,10 +39,10 @@ const FILES = [
   },
    {
       name: "CapCut v18.5.0.apk",
-      category: "video editing",
+      category: "video-editing",
       sizeMB: 277,
       date: "2026-10-06",
-      desc: "CapCut has excellent video processing capabilities, combined with top-notch artificial intelligence, to support deep and precise editing with extreme precision. Above all, its video templates are the main and most important content to create countless amazing videos even if the user does not have the necessary knowledge.",
+      desc: "CapCut has excellent video processing capabilities, combined with top-notch artificial intelligence, to support deep and precise editing with extreme precision. Above all, its video templates are the main and most important content to create countless amazing videos even if the user does not have the necessary knowledge",
       direct: "https://mega.nz/file/8zBGVAAY#0hnbA-E-GHM-hH1i7R8inaEFe3mAlijyUGaNXui-Y5U",
       mirror: "https://leeapk.com/capcut-mod-apk/download",
    },
