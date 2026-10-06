@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="VAULT.SYS — a public file archive. Direct downloads and cloud mirrors, no sign-up.">
+<title>Dropnode</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!--BOOT SEQUENCE-->
+<div id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <pre id="boot-log" class="boot-log"></pre>
+    <div class="boot-bar"><span id="boot-fill"></span></div>
+    <button id="boot-skip" type="button">SKIP &gt;&gt;</button>
+  </div>
+</div>
+
+<!--CRT MATERIAL LAYERS-->
+<div class="crt-noise" aria-hidden="true"></div>
+<div class="crt-scanlines" aria-hidden="true"></div>
+<div class="crt-vignette" aria-hidden="true"></div>
+<div class="glitch-band band-1" aria-hidden="true"></div>
+<div class="glitch-band band-2" aria-hidden="true"></div>
+<div class="glitch-band band-3" aria-hidden="true"></div>
+
+<!--HEADER HUD-->
+<header class="hud-top">
+  <a class="brand" href="#top" aria-label="VAULT.SYS home">
+    <svg class="brand-mark" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M4 4h16v4H4zM4 10h16v10H4zM7 13h6v2H7z" fill="currentColor"/>
+    </svg>
+    <span class="brand-text chroma">Dropnode</span>
+  </a>
+  <nav class="hud-nav" aria-label="Primary">
+    <a href="#index">DOWNLOADS</a>
+    <a href="#request">REQUEST</a>
+  </nav>
+  <div class="hud-status">
+    <span class="status-dot" aria-hidden="true"></span>
+    <time id="hud-clock" class="hud-clock">00:00:00</time>
+  </div>
+</header>
+
+<main id="top">
+
+  <!--HERO-->
+  <section class="hero">
+    <h1 class="hero-title chroma" aria-label="File Vault">
+      <span class="hero-line" data-text="FILE">FILE</span>
+      <span class="hero-line" data-text="VAULT">VAULT</span>
+    </h1>
+    <p class="hero-tag reveal"><span id="typed"></span><span class="cursor" aria-hidden="true"></span></p>
+    <p class="hero-desc reveal">Direct downloads and verified cloud mirrors. No accounts, no tracking, no waiting rooms. Pull what you need.</p>
+
+    <dl class="hero-stats reveal">
+      <div class="stat"><dt>FILES</dt><dd id="stat-count">000</dd></div>
+      <div class="stat"><dt>TOTAL SIZE</dt><dd id="stat-size">0 GB</dd></div>
+      <div class="stat"><dt>LAST SYNC</dt><dd id="stat-sync">--</dd></div>
+    </dl>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+      </div>
+    </div>
+  </section>
+
+  <!--CONSOLE (search + filters)-->
+  <div class="console-wrap">
+    <aside class="console" id="console">
+      <div class="panel">
+        <div class="panel-head">
+          <span>SEARCH</span>
+          <span class="panel-head-right" id="result-count">00 RESULTS</span>
+        </div>
+
+        <label class="search" for="search-input">
+          <span class="prompt" aria-hidden="true">&gt;</span>
+          <input id="search-input" type="search" placeholder="search files" autocomplete="off" spellcheck="false">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </label>
+
+        <div class="sort-row">
+          <label for="sort-select">SORT</label>
+          <select id="sort-select">
+            <option value="newest">NEWEST</option>
+            <option value="name">NAME A&ndash;Z</option>
+            <option value="size">SIZE &darr;</option>
+          </select>
+        </div>
+
+        <div class="chips" id="chips" role="group" aria-label="Categories"></div>
+
+        <button id="clear-filters" class="clear-btn" type="button" hidden>[ CLEAR FILTERS ]</button>
+      </div>
+    </aside>
+
+    <!--FILE INDEX-->
+    <section class="index" id="index" aria-label="File index">
+      <div class="index-head">
+        <span class="index-col-id">ID</span>
+        <span class="index-col-name">FILENAME</span>
+        <span class="index-col-meta">INFO</span>
+      </div>
+      <ol id="file-list" class="file-list"></ol>
+      <div id="empty-state" class="empty-state" hidden>
+        <p class="empty-code">ERR 404</p>
+        <p>NO MATCHING FILES IN ARCHIVE</p>
+        <a class="btn btn-ghost" href="#request">REQUEST IT &gt;&gt;</a>
+      </div>
+    </section>
+  </div>
+
+  <!--REQUEST-->
+  <section class="request" id="request">
+    <div class="req-window reveal">
+      <div class="req-titlebar">
+        <span class="req-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>REQUEST</span>
+      </div>
+      <div class="req-body">
+        <p class="req-line"><span class="prompt">&gt;</span> file not found in archive?</p>
+        <p class="req-line"><span class="prompt">&gt;</span> open a direct channel. describe what you need.</p>
+        <p class="req-line"><span class="prompt">&gt;</span> most requests fulfilled within 48h<span class="cursor" aria-hidden="true"></span></p>
+        <!-- ▼▼ EDIT: replace "your_username" with your Telegram username ▼▼ -->
+        <a class="btn btn-primary req-cta" href="https://t.me/th3phreak" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M21.9 4.6L2.7 12c-.9.35-.86 1.6.06 1.9l4.85 1.55 1.8 5.65c.28.87 1.33 1.05 1.85.35l2.6-3.5 4.6 3.4c.7.5 1.7.15 1.85-.7l2.6-14.6c.15-1-.85-1.8-1.85-1.45z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+          REQUEST VIA TELEGRAM
+        </a>
+        <button class="btn btn-ghost" id="copy-handle" type="button">[ COPY HANDLE ]</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!--FOOTER-->
+<footer class="hud-bottom">
+  <div class="hud-uptime">
+    <span class="status-dot" aria-hidden="true"></span>
+    <span>SESSION <time id="uptime">00:00:00</time></span>
+  </div>
+  <p class="hud-copy">&copy; <span id="year"></span> Dropnode</p>
+  <button id="rewind" class="rewind" type="button" aria-label="Back to top">&lt;&lt; REWIND</button>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/files.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
