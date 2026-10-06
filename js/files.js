@@ -19,15 +19,6 @@ const CATEGORIES = [
 ];
 
 const FILES = [
-   {
-      name: " CapCut v18.5.0 Build 18500002 Pro",
-      category: "Video Editing Software",
-      sizeMB: "277",
-      date: "2026-10-06",
-      desc: "CapCut is currently one of the most amazing and professional video editors widely used by everyone. It has excellent video processing capabilities, combined with top-notch artificial intelligence, to support deep and precise editing with extreme precision. Above all, its video templates are the main and most important content to create countless amazing videos even if the user does not have the necessary knowledge.",
-      direct: "https://mega.nz/file/8zBGVAAY#0hnbA-E-GHM-hH1i7R8inaEFe3mAlijyUGaNXui-Y5U",
-      mirror: "https://leeapk.com/capcut-mod-apk/download/",
-   },
   {
     name: "MovieBox_4.0.03.0930.03_(50020132_premium.apk",
     category: "software",
