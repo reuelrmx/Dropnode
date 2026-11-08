@@ -20,14 +20,23 @@ const CATEGORIES = [
 
 const FILES = [
   {
-    name: "MovieBox_4.0.03.0930.03_(50020132)_premium.apk",
+    name: "MovieBox_4.0.03.1028.03_(52120136)_Mod_V2.apk",
     category: "software",
-    sizeMB: 80,
-    date: "2026-10-06",
+    sizeMB: 68,
+    date: "2026-11-08",
     desc: "MovieBox offers a wide library of movies and TV shows to suit different tastes.",
-    direct: "https://mega.nz/file/l6YgCaAB#3gNpL2c5daqoooDDKqpMfqZiCjBXGbPmlz3TBU29I4Q",
+    direct: "https://mega.nz/file/tiJ3CSwI#4gWRhDHyxrUMLL3NUOz4ERE9_U6WWCY47iPvyBQ0l1s",
     mirror: "https://leeapk.com/0012-moviebox-mod-apk/",
   },
+   {
+      name: "AZ_Screen_Recorder_v6.9.12_(70390)_Mod.apk",
+      category: "software",
+      sizeMB: 46,
+      date: "2026-11-08",
+      desc: "AZ Screen Recorder is a program that allows users to record screen video in the best way.",
+      direct: "https://mega.nz/file/k2AWhR7S#lKr6aH0FGM1NK1G06bgWTQShMD92YIzCSEX5lzPQ5_8",
+      mirror: "https://leeapk.com/az-screen-recorder/",
+   },
   {
     name: "The Back Of The Photo.pdf",
     category: "pdf",
